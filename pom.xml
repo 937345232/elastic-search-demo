@@ -1,0 +1,110 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.chenqin</groupId>
+  <artifactId>elastic-search-demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <properties>
+		<!-- log4j日志文件管理包版本 -->
+		<slf4j.version>1.7.21</slf4j.version>
+<!-- 		<log4j.version>1.2.17</log4j.version> -->
+         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+          <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>   
+         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>  
+
+	</properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+	    <groupId>org.elasticsearch.client</groupId>
+	    <artifactId>elasticsearch-rest-client</artifactId>
+	    <version>5.6.3</version>
+	</dependency>
+	<dependency>  
+            <groupId>org.elasticsearch.client</groupId>  
+            <artifactId>transport</artifactId>  
+            <version>5.6.3</version>  
+        </dependency>  
+	<!-- 格式化对象，方便输出日志 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.41</version>
+		</dependency>
+		<!-- 		logback start-->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.logback-extensions</groupId>
+			<artifactId>logback-ext-spring</artifactId>
+			<version>0.1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<!-- 		logback end-->
+		 <dependency>
+		  <groupId>commons-lang</groupId>
+		  <artifactId>commons-lang</artifactId>
+		  <version>2.6</version>
+		</dependency>
+		
+  </dependencies>
+  
+   <distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Internal Release Repository</name>
+			<url>
+				http://172.16.88.47:8081/nexus/content/repositories/releases/
+			</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Internal Snapshot Repository</name>
+			<url>
+				http://172.16.88.47:8081/nexus/content/repositories/snapshots/
+			</url>
+		</snapshotRepository>
+	</distributionManagement>
+  
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+  
+	
+</project>
