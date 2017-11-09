@@ -1,4 +1,4 @@
-## Meeting-search  ##
+## elastic-search-demo  ##
 ### 项目作用  ###
 - 在`elasticsearch`的接口进行封装，用于微信公众号项目`bcc-weixin`参会人员的搜索；  
 ### 配置  ###
